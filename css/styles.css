@@ -364,6 +364,7 @@ address {
 }
 
 .doing-list-item {
+  position: relative;
   width: calc((100% - 60px) / 3);
 }
 
@@ -373,6 +374,16 @@ address {
 
 .doing-img {
   display: block;
+}
+
+.doing-subtitle {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  text-align: center;
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 /* НАША КОМАНДА */
@@ -645,6 +656,7 @@ address {
 }
 
 .portfolio-cards-list-item {
+  position: relative;
   width: calc((100% - 60px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
@@ -652,7 +664,7 @@ address {
   border: 1px solid #eeeeee;
 }
 
-.portfolio-cards-list-item:hover {
+.portfolio-cards-list-item-link:hover {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
 }
@@ -665,8 +677,31 @@ address {
   margin-bottom: 0;
 }
 
+.portfolio-cards-list-item-link:hover .portfolio-overlay-cards {
+  opacity: 1;
+}
+
 .portfolio-cards-img {
   display: block;
+}
+
+.portfolio-overlay-cards {
+  opacity: 0;
+  padding: 63px 24px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+
+  color: var(--text-dark-theme-color);
+  background-color: rgba(33, 150, 243, 0.9);
 }
 
 .cards-bottom {
