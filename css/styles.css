@@ -44,6 +44,14 @@ img {
   height: auto;
 }
 
+p,
+h1,
+h2,
+h3 {
+  padding: 0;
+  margin: 0;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -141,6 +149,8 @@ address {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigation-list-link.studio {
@@ -186,6 +196,8 @@ address {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Тренька c псевдо */
@@ -215,11 +227,12 @@ address {
   fill: var(--accent);
 }
 
-/* 2 способ - унаследованием родного цвета и ховера у родителя:
- .header-icons {
-  fill: currentColor;
-  margin-right: 10px;
-}*/
+/* 2 способ - унаследованием родного цвета и ховера у родителя: */
+.header-icons {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* fill: currentColor;
+  margin-right: 10px; */
+}
 
 /* ЗАГОЛОВОК */
 
@@ -451,18 +464,27 @@ address {
   align-items: center;
 
   fill: var(--social-link-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-list-item:not(:last-child) {
   margin-right: 10px;
 }
 
-.team-social-list-item:hover {
+.team-social-list-item:hover,
+.team-social-list-item:focus {
   background-color: var(--accent);
   border-radius: 50%;
 }
 
-.team-social-list-item:hover a {
+.team-social-list-item {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-social-list-item:hover a,
+.team-social-list-item:focus a {
   fill: var(--text-dark-theme-color);
 }
 
@@ -489,17 +511,21 @@ address {
   height: 90px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-icons {
   fill: var(--social-link-color);
 }
 
-.clients-list-item-link:hover {
+.clients-list-item-link:hover,
+.clients-list-item-link:focus {
   border: 1px solid var(--accent);
 }
 
-.clients-list-item-link:hover .clients-icons {
+.clients-list-item-link:hover .clients-icons,
+.clients-list-item-link:focus .clients-icons {
   fill: var(--accent);
 }
 
@@ -554,6 +580,7 @@ address {
 .footer-social-list-item {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-social-list-item a {
@@ -564,7 +591,8 @@ address {
   align-items: center;
 }
 
-.footer-social-list-item:hover {
+.footer-social-list-item:hover,
+.footer-social-list-item:focus {
   background-color: var(--accent);
 }
 
@@ -637,6 +665,7 @@ address {
   line-height: 1.62;
   border: 1px solid #f5f4fa;
   border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-btn:hover,
@@ -656,7 +685,7 @@ address {
 }
 
 .portfolio-cards-list-item {
-  position: relative;
+  /* position: relative; */
   width: calc((100% - 60px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
@@ -664,7 +693,8 @@ address {
   border: 1px solid #eeeeee;
 }
 
-.portfolio-cards-list-item-link:hover {
+.portfolio-cards-list-item-link:hover,
+.portfolio-cards-list-item-link:focus {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
 }
@@ -677,24 +707,33 @@ address {
   margin-bottom: 0;
 }
 
-.portfolio-cards-list-item-link:hover .portfolio-overlay-cards {
+.portfolio-cards-list-item-link:hover .portfolio-overlay-cards,
+.portfolio-cards-list-item-link:focus .portfolio-overlay-cards {
   opacity: 1;
+  transform: translateY(0);
 }
 
 .portfolio-cards-img {
   display: block;
 }
 
+.cards-top {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
 .portfolio-overlay-cards {
   opacity: 0;
   padding: 63px 24px;
   width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  /* transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   font-size: 18px;
   line-height: 1.55;
