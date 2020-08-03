@@ -99,6 +99,7 @@ address {
 .social-icons {
   width: 20px;
   height: 20px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   /* продумать наследование цвета */
 }
 
@@ -456,34 +457,30 @@ address {
   display: flex;
 }
 
-.team-social-list-item a {
+.team-social-link {
   display: flex;
   width: 44px;
   height: 44px;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
 
   fill: var(--social-link-color);
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-list-item:not(:last-child) {
   margin-right: 10px;
 }
 
-.team-social-list-item:hover,
-.team-social-list-item:focus {
+.team-social-link:hover,
+.team-social-link:focus {
   background-color: var(--accent);
 }
 
-.team-social-list-item {
-  border-radius: 50%;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.team-social-list-item:hover a,
-.team-social-list-item:focus a {
+.team-social-link:hover .team-social-icons,
+.team-social-link:focus .team-social-icons {
   fill: var(--text-dark-theme-color);
 }
 
@@ -579,19 +576,20 @@ address {
 .footer-social-list-item {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-social-list-item a {
+.footer-social-link {
   display: flex;
   width: 44px;
   height: 44px;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-social-list-item:hover,
-.footer-social-list-item:focus {
+.footer-social-link:hover,
+.footer-social-link:focus {
   background-color: var(--accent);
 }
 
@@ -664,7 +662,8 @@ address {
   line-height: 1.62;
   border: 1px solid #f5f4fa;
   border-radius: 4px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-btn:hover,
