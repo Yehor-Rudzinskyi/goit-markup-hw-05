@@ -254,6 +254,16 @@ address {
   text-align: center;
 }
 
+@keyframes zoomtitle {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .main-heading {
   margin-top: 0;
   margin-bottom: 30px;
@@ -265,6 +275,8 @@ address {
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+
+  animation: zoomtitle 1000ms linear;
 }
 
 .main-heading-order-button {
